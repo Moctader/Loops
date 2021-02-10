@@ -50,19 +50,19 @@ function l03() {
     document.getElementById("stars1").innerHTML=""
     document.getElementById("stars2").innerHTML=""
 
-    star =" ";
+    star ="";
     for (i=0; i< amount; i++){
         star = star + "*"
-        document.getElementById("stars1").innerHTML += star + "<br>"
+        document.getElementById("stars1").innerHTML += star +"<br>";
     }
 
 
 // while loop using In the first row there is one star,in the second row two stars, etc. until in the last row
-    star= " "
+    star= ""
     j = 0;
     while (j < amount){
         star += "*"
-        document.getElementById("stars2").innerHTML += star + "<br>"
+        document.getElementById("stars2").innerHTML += star +"<br>"
         j++;
     }
 
@@ -135,15 +135,42 @@ document.getElementById("ones").innerHTML = ones;
 }
 
 function l07() {
+    document.getElementById("week").innerHTML = getRndInteger(1, 52);
+    let result =""
+    for (i = 1; i<=7; i++){
+        result += getRndInteger(0,9) +" "
+    }
+    document.getElementById("joker").innerHTML = result;
 
 }
 
 function l08() {
+    let multiplier = document.getElementById("multiplier").value;
 
+    let result1 = ""
+    for (i = 0; i <= 10; i++){
+        amount = multiplier * i;
+
+        result1 += multiplier + " * " + i + " = " + amount +"<br>"
+    }
+    document.getElementById("table").innerHTML = result1
 }
 
 function l09() {
     const space = ";&nbsp;&nbsp;";
+    document.getElementById("multiplication").innerHTML = " "
+
+    let result2 = "";
+    for (i = 0; i <= 10; i++){
+        for(j = 0; j <= 20; j++){
+           let amount = i * j
+            result2 += i + " * " + j + " = " + amount + space  
+        }
+
+        result2 += "<br>"
+    }
+
+    document.getElementById("multiplication").innerHTML = result2
 
 }
 
